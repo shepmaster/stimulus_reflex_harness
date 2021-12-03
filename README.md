@@ -1,4 +1,21 @@
-# StimulusReflex test harness app
+# Steps
+
+1. Start the server
+1. Open one window, click the `test` button a few times
+1. Open another window, click the `test` button a few times
+
+Possible outcomes:
+
+- Both windows share the same thread and counter. Manifests here by
+  resetting the counter of the first window when the second window is
+  opened and then sharing the same value afterwards.
+
+- The thread servicing the WebSocket request changes after the
+  connection is established. Manifests here as ``undefined method `+'
+  for nil:NilClass``. May be easiest to see by adding a sleep into the
+  view and then clicking the `test` button in both windows.
+
+## StimulusReflex test harness app
 
 Purpose: Verify a bare-bones SR application. Branch it to build MCVEs.
 
